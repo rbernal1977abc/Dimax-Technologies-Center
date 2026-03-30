@@ -22,7 +22,6 @@
       scroll-behavior: smooth;
     }
 
-    /* theme colors from profile: deep tech blue, silver accents */
     :root {
       --primary: #0a2b4e;
       --primary-dark: #051a30;
@@ -43,7 +42,6 @@
       padding: 0 24px;
     }
 
-    /* header / navigation */
     .navbar {
       background: var(--light-bg);
       box-shadow: var(--shadow-sm);
@@ -63,21 +61,40 @@
       margin: 0 auto;
     }
 
-    .logo h1 {
-      font-size: 1.7rem;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      height: 55px;
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-text h1 {
+      font-size: 1.5rem;
       font-weight: 800;
       background: linear-gradient(135deg, var(--primary) 30%, #1e4a76);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       letter-spacing: -0.3px;
+      line-height: 1.2;
     }
-    .logo span {
-      font-size: 0.8rem;
-      display: block;
+    .logo-text span {
+      font-size: 0.7rem;
       color: var(--secondary);
       font-weight: 500;
       letter-spacing: 0.5px;
+    }
+    @media (max-width: 550px) {
+      .logo-img { height: 42px; }
+      .logo-text h1 { font-size: 1.1rem; }
+      .logo-text span { font-size: 0.6rem; }
     }
 
     .nav-links {
@@ -92,7 +109,7 @@
       transition: 0.2s;
       font-size: 0.95rem;
     }
-    .nav-links a:hover, .nav-links a.active {
+    .nav-links a:hover {
       color: var(--secondary);
     }
     .mobile-menu-btn {
@@ -102,7 +119,6 @@
       color: var(--primary);
     }
 
-    /* buttons */
     .btn-primary {
       background: var(--primary);
       color: white;
@@ -114,7 +130,6 @@
       display: inline-block;
       border: none;
       cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     .btn-primary:hover {
       background: #0f3b62;
@@ -129,13 +144,39 @@
       color: var(--primary);
       transition: 0.2s;
       text-decoration: none;
+      display: inline-block;
     }
     .btn-outline:hover {
       background: var(--primary);
       color: white;
     }
+    .btn-gold {
+      background: var(--secondary);
+      color: var(--primary-dark);
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-gold:hover {
+      background: #b88f2c;
+      transform: translateY(-2px);
+      color: white;
+    }
+    .btn-download {
+      background: #2c5a2e;
+      color: white;
+    }
+    .btn-download:hover {
+      background: #1e3f20;
+    }
 
-    /* hero */
     .hero {
       background: linear-gradient(105deg, #ffffff 45%, #f0f4fa 100%);
       padding: 4rem 0 5rem;
@@ -175,6 +216,7 @@
       display: flex;
       gap: 2rem;
       margin-top: 2rem;
+      flex-wrap: wrap;
     }
     .hero-stats div strong {
       font-size: 1.8rem;
@@ -189,8 +231,12 @@
       color: var(--primary);
       opacity: 0.15;
     }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-    /* section common */
     .section {
       padding: 5rem 0;
     }
@@ -209,10 +255,9 @@
       font-size: 1.1rem;
     }
 
-    /* solutions grid */
     .solutions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
     .solution-card {
@@ -253,7 +298,47 @@
       font-size: 0.8rem;
     }
 
-    /* RPSS banner */
+    /* Bathala Highlight Card */
+    .bathala-highlight {
+      background: linear-gradient(135deg, #0a2b4e 0%, #144a6e 100%);
+      border-radius: 28px;
+      padding: 2rem;
+      margin: 2rem 0;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .bathala-content {
+      flex: 2;
+    }
+    .bathala-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .bathala-content p {
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+    .bathala-btn {
+      background: var(--secondary);
+      color: var(--primary-dark);
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.2s;
+    }
+    .bathala-btn:hover {
+      background: #e6b242;
+      transform: scale(1.02);
+    }
+
     .rpss-banner {
       background: var(--primary);
       color: white;
@@ -280,7 +365,6 @@
       color: var(--accent-gold);
     }
 
-    /* products & partners */
     .products-list {
       display: flex;
       flex-wrap: wrap;
@@ -297,7 +381,6 @@
       border: 1px solid var(--border-light);
     }
 
-    /* project showcase */
     .projects-showcase {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -317,7 +400,6 @@
       margin-bottom: 0.4rem;
     }
 
-    /* clients logos area */
     .clients-grid {
       display: flex;
       flex-wrap: wrap;
@@ -333,7 +415,6 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
-    /* contact footer */
     .contact-section {
       background: var(--primary-dark);
       color: white;
@@ -358,7 +439,6 @@
       font-size: 0.85rem;
     }
 
-    /* mobile */
     @media (max-width: 800px) {
       .nav-links {
         display: none;
@@ -381,30 +461,21 @@
       .hero-content h2 {
         font-size: 2.3rem;
       }
-      .hero-stats {
-        flex-wrap: wrap;
-      }
       .section {
         padding: 3rem 0;
       }
       .rpss-grid {
         flex-direction: column;
       }
-    }
-    .cert-badge {
-      background: white;
-      border-radius: 20px;
-      padding: 1rem;
-      display: inline-block;
-      margin-top: 1rem;
+      .bathala-highlight {
+        flex-direction: column;
+        text-align: center;
+      }
     }
     .tagline {
       font-style: italic;
       color: var(--secondary);
       font-weight: 500;
-    }
-    a {
-      text-decoration: none;
     }
   </style>
 </head>
@@ -413,7 +484,12 @@
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo">
-      <h1>DIMAX<br><span>TECHNOLOGIES CENTER</span></h1>
+      <!-- Logo image will load from GitHub - upload your logo.jpg -->
+      <img src="logo.jpg" alt="DIMAX Technologies Center Logo" class="logo-img" onerror="this.style.display='none'">
+      <div class="logo-text">
+        <h1>DIMAX<br>TECHNOLOGIES CENTER</h1>
+        <span>Total Automation & Integration</span>
+      </div>
     </div>
     <div class="mobile-menu-btn" id="menuToggle">
       <i class="fas fa-bars"></i>
@@ -424,19 +500,21 @@
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="#products" class="btn-outline" style="padding: 8px 18px;">Products</a>
+      <a href="DIMAX.pdf" class="btn-outline" style="padding: 8px 18px;" download><i class="fas fa-download"></i> Profile</a>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
 <section id="home" class="hero">
   <div class="container hero-grid">
     <div class="hero-content">
       <div class="hero-badge"><i class="fas fa-shield-alt"></i> Total Automation & Integration</div>
       <h2>Secure, Reliable &<br>Future-Ready Solutions</h2>
       <p>IT Infrastructure · Security Systems · Safety & Fire Suppression · Smart Automation</p>
-      <a href="#contact" class="btn-primary"><i class="fas fa-headset"></i> Talk to an expert</a>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary"><i class="fas fa-headset"></i> Talk to an expert</a>
+        <a href="DIMAX.pdf" class="btn-gold btn-download" download><i class="fas fa-file-pdf"></i> Download Company Profile</a>
+      </div>
       <div class="hero-stats">
         <div><strong>18+</strong><br>Years Experience</div>
         <div><strong>150+</strong><br>Projects Delivered</div>
@@ -445,12 +523,10 @@
     </div>
     <div class="hero-image">
       <i class="fas fa-microchip"></i>
-      <!-- visual integrated systems -->
     </div>
   </div>
 </section>
 
-<!-- Core philosophy RPSS -->
 <section class="container">
   <div class="rpss-banner">
     <h3 style="font-size: 1.8rem;">Our Core Philosophy — <span style="color:#e9b741;">RPSS</span></h3>
@@ -463,7 +539,6 @@
   </div>
 </section>
 
-<!-- Solutions (IT, Security, Safety) -->
 <section id="solutions" class="section">
   <div class="container">
     <h2 class="section-title">Comprehensive Solutions</h2>
@@ -500,10 +575,20 @@
         </ul>
       </div>
     </div>
+
+    <!-- Bathala Alarm Security Systems - Key Partnership -->
+    <div class="bathala-highlight">
+      <div class="bathala-content">
+        <h3><i class="fas fa-shield-hog"></i> Bathala Alarm Security Systems</h3>
+        <p><strong>24/7 Professional Command Center Monitoring</strong> — Filipino-owned, ISO Certified. Protect your home and business with state-of-the-art alarm systems, mobile alerts, and instant emergency response.</p>
+        <p>Trusted by Filipino families and businesses nationwide. Integrated security solutions: door/window sensors, motion detectors, CCTV, access control, and village-wide perimeter protection.</p>
+        <a href="https://www.bathalaintelligence.com/" target="_blank" class="bathala-btn"><i class="fas fa-external-link-alt"></i> Visit Bathala Intelligence →</a>
+      </div>
+      <div style="font-size: 4rem; opacity: 0.3;"><i class="fas fa-shield-alt"></i></div>
+    </div>
   </div>
 </section>
 
-<!-- Products & Partners -->
 <section id="products" class="section" style="background: var(--gray-bg);">
   <div class="container">
     <h2 class="section-title">Trusted Brands & Products</h2>
@@ -515,11 +600,11 @@
     </div>
     <div class="products-list" style="margin-top: 0.5rem;">
       <span>Fiber Optic Solutions</span><span>Wireless Mesh</span><span>Precision Cooling</span><span>FM200 Agents</span>
+      <span><i class="fas fa-shield-alt"></i> Bathala Alarm Systems</span>
     </div>
   </div>
 </section>
 
-<!-- Project highlights (from profile) -->
 <section id="projects" class="section">
   <div class="container">
     <h2 class="section-title">Key Projects & Command Centers</h2>
@@ -541,7 +626,6 @@
   </div>
 </section>
 
-<!-- About us: Vision, Mission -->
 <section id="about" class="section" style="background: var(--gray-bg);">
   <div class="container">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 2rem;">
@@ -561,13 +645,12 @@
         <p>100% client satisfaction · Efficient project execution · Exceed annual targets · Create technical & executive job excellence · Sustain profitable growth.</p>
       </div>
     </div>
-    <div class="cert-badge" style="background: var(--light-bg); border-radius: 48px; text-align: center; margin-top: 2.5rem;">
+    <div style="background: var(--light-bg); border-radius: 48px; text-align: center; margin-top: 2.5rem; padding: 1.2rem;">
       <i class="fas fa-trophy"></i> NTC Dealer Permit · DTI Registered · PCAB Accredited · ISO-compliant partnerships
     </div>
   </div>
 </section>
 
-<!-- Contact + address -->
 <section id="contact" class="contact-section" style="padding: 3rem 0 0;">
   <div class="container">
     <div class="contact-flex">
@@ -577,14 +660,16 @@
         <p><i class="fas fa-phone-alt"></i> +63 917 483 9279 | +63 923 947 8655</p>
         <p><i class="fas fa-envelope"></i> paulo.d@dmtci.com | dimaxtechnologiescenter@yahoo.com</p>
         <p><i class="fas fa-globe"></i> www.dimaxtechnologiescenter.com</p>
-        <div style="margin-top: 1.5rem;">
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
           <a href="mailto:paulo.d@dmtci.com" class="btn-primary" style="background: white; color: var(--primary);"><i class="fas fa-paper-plane"></i> Send Inquiry</a>
+          <a href="DIMAX.pdf" class="btn-gold" download><i class="fas fa-download"></i> Download Profile (PDF)</a>
         </div>
       </div>
       <div class="contact-info">
         <h3>Automating security for people & property</h3>
         <p class="tagline">Your reliable security solutions provider since 2005</p>
         <p><i class="fas fa-certificate"></i> PCAB License · PhilGEPS Registered · Government & Private expertise</p>
+        <p><i class="fas fa-shield-alt"></i> Partner: <strong>Bathala Alarm Security Systems</strong> — 24/7 Command Center Monitoring</p>
         <div style="margin-top: 1rem;">
           <i class="fab fa-facebook"></i> &nbsp; <i class="fab fa-linkedin"></i> &nbsp; DIMAX Tech Center
         </div>
@@ -592,7 +677,7 @@
     </div>
     <div class="footer-copyright">
       <p>© 2025 DIMAX TECHNOLOGIES CENTER — Total Automation & Integration. Reliability • Practicability • Sustainability • Streamline</p>
-      <p style="margin-top: 8px; font-size: 0.75rem;">FM200 | CCTV | Biometrics | Data Center | Fiber Optics | Access Control</p>
+      <p style="margin-top: 8px; font-size: 0.75rem;">FM200 | CCTV | Biometrics | Data Center | Fiber Optics | Access Control | Bathala Alarm Systems</p>
     </div>
   </div>
 </section>
@@ -605,7 +690,7 @@
   });
   document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-      if(anchor.getAttribute('href').startsWith('#')) {
+      if(anchor.getAttribute('href') && anchor.getAttribute('href').startsWith('#')) {
         e.preventDefault();
         const targetId = anchor.getAttribute('href').substring(1);
         const target = document.getElementById(targetId);
