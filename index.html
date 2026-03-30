@@ -61,40 +61,33 @@
       margin: 0 auto;
     }
 
+    /* Logo styling - larger and without text */
     .logo {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 6px;
     }
     .logo-img {
-      height: 55px;
+      height: 80px;
       width: auto;
       object-fit: contain;
+      display: block;
     }
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-    }
-    .logo-text h1 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--primary) 30%, #1e4a76);
+    .logo-tagline {
+      font-size: 0.75rem;
+      color: var(--secondary);
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--secondary) 0%, #e6b242 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      letter-spacing: -0.3px;
-      line-height: 1.2;
-    }
-    .logo-text span {
-      font-size: 0.7rem;
-      color: var(--secondary);
-      font-weight: 500;
-      letter-spacing: 0.5px;
     }
     @media (max-width: 550px) {
-      .logo-img { height: 42px; }
-      .logo-text h1 { font-size: 1.1rem; }
-      .logo-text span { font-size: 0.6rem; }
+      .logo-img { height: 55px; }
+      .logo-tagline { font-size: 0.65rem; }
     }
 
     .nav-links {
@@ -445,12 +438,13 @@
         flex-direction: column;
         background: white;
         position: absolute;
-        top: 70px;
+        top: 85px;
         left: 0;
         width: 100%;
         padding: 1.5rem;
         box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         gap: 1rem;
+        z-index: 99;
       }
       .nav-links.show {
         display: flex;
@@ -484,12 +478,9 @@
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo">
-      <!-- Logo image will load from GitHub - upload your logo.jpg -->
+      <!-- Logo image from GitHub - upload your logo.jpg -->
       <img src="logo.jpg" alt="DIMAX Technologies Center Logo" class="logo-img" onerror="this.style.display='none'">
-      <div class="logo-text">
-        <h1>DIMAX<br>TECHNOLOGIES CENTER</h1>
-        <span>Total Automation & Integration</span>
-      </div>
+      <div class="logo-tagline">Total Automation & Integration</div>
     </div>
     <div class="mobile-menu-btn" id="menuToggle">
       <i class="fas fa-bars"></i>
@@ -676,7 +667,7 @@
       </div>
     </div>
     <div class="footer-copyright">
-      <p>© 2025 DIMAX TECHNOLOGIES CENTER — Total Automation & Integration. Reliability • Practicability • Sustainability • Streamline</p>
+      <p>© 2026 DIMAX TECHNOLOGIES CENTER — Total Automation & Integration. Reliability • Practicability • Sustainability • Streamline</p>
       <p style="margin-top: 8px; font-size: 0.75rem;">FM200 | CCTV | Biometrics | Data Center | Fiber Optics | Access Control | Bathala Alarm Systems</p>
     </div>
   </div>
